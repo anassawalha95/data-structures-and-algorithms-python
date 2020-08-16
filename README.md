@@ -18,6 +18,6 @@
 
 ## Solution
 
-[photo](assets/Image from iOS1.jpg)
+![photo](assets/answer2.jpg)
 
-[photo](assets/Image from iOS (1).jpg)
+![photo](assets/answer1.jpg)
