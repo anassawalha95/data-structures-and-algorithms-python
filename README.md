@@ -21,3 +21,10 @@
 ![photo](assets/answer2.jpg)
 
 ![photo](assets/answer1.jpg)
+
+
+
+### Challenges
+
+- [x] Array Reverse
+- [ ] Linked List
