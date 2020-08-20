@@ -7,8 +7,8 @@ def test_insertShiftArray():
     assert actual == expected
 
 def test_insertShiftArray_1():
-    actual = insertShiftArray([10,20,30,40,60,70,80,90,100],50)
-    expected = [10,20,30,40,50,60,70,80,90,100]
+    actual = insertShiftArray([4,8,15,23,42], 16)
+    expected = [4,8,15,16,23,42]
     assert actual == expected
 
 def test_insertShiftArray_2():
@@ -23,10 +23,10 @@ def test_insertShiftArray_3():
 
 def test_insertShiftArray_4():
     actual = insertShiftArray([1,2,3,4,7,8,9], 5)
-    expected = [1,2,3,5,4,7,8,9]
+    expected = [1,2,3,4,5,7,8,9]
     assert actual == expected
 
 def test_insertShiftArray_5():
     actual = insertShiftArray([1,2,4,5,6], 3)
-    expected = [1,2,3,4,5,6]
+    expected = [1,2,4,3,5,6]
     assert actual == expected
