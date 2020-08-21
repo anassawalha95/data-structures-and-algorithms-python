@@ -2,7 +2,8 @@
 
 This repo contain challenges in the folowing topics:
 
-SUBJECTS        | LINKS
-----------------|--------------------------------------------------------
-reverse-array   | [Link]()
-array-shift     | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/pull/5)
+SUBJECTS            | LINKS
+--------------------|--------------------------------------------------------
+reverse-array       | [Link]()
+array-shift         | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/pull/5)
+array-binary-search | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/pull/6)
