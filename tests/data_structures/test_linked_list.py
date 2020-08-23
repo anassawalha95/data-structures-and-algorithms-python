@@ -44,3 +44,34 @@ def test_head_linked_list():
     nums.insert(2)
     nums.insert(3)
     assert nums.head.value == 0
+
+def test_insert_after():
+    ll = Linkedlist()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.insert_after(1,5)
+    actual = ll.__str__()
+    expected =  "{ 1 } -> { 5 } -> { 2 } -> { 3 } -> NULL"
+    assert actual == expected
+
+
+def test_insert_before():
+    ll = Linkedlist()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.insert_before(2,5)
+    actual = ll.__str__()
+    expected =  "{ 1 } -> { 5 } -> { 2 } -> { 3 } -> NULL"
+    assert actual == expected
+
+
+def test_append():
+    ll = Linkedlist()
+    ll.append(1)
+    ll.append(2)
+    ll.append(3)
+    actual = ll.__str__()
+    expected =  "{ 1 } -> { 2 } -> { 3 } -> NULL"
+    assert actual == expected
