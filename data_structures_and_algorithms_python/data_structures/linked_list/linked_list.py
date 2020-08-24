@@ -93,6 +93,22 @@ class Linkedlist():
             curent=curent.next
         return False
 
+    def kth_from_end(self, k):
+        try:
+            
+            n = -1
+            curr = self.head
+            while curr:
+                curr = curr.next
+                n = n + 1
+            if n >= k:
+                curr = self.head
+                for i in range(n - k):
+                    curr = curr.next
+
+            return curr.value
+        except:
+            return "The Value Nott Found"
 
     def __str__(self):
         curent = self.head
@@ -111,10 +127,8 @@ my_list.insert(1)
 my_list.insert(2)
 my_list.insert(3)
 my_list.insert(4)
-print(my_list.insert_before(3,5))
+# print(my_list.insert_before(3,5))
+# print(my_list.__str__())
+# my_list.insert_after(3,5)
 print(my_list.__str__())
-my_list.insert_after(3,5)
-print(my_list.__str__())
-
-
-
+print(my_list.kth_from_end(1))
