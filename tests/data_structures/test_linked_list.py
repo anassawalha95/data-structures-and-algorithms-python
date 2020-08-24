@@ -75,3 +75,33 @@ def test_append():
     actual = ll.__str__()
     expected =  "{ 1 } -> { 2 } -> { 3 } -> NULL"
     assert actual == expected
+
+def test_kth_from_end_0():
+    ll = Linkedlist()
+    ll.append(1)
+    ll.append(3)
+    ll.append(8)
+    ll.append(2)
+    expected = 2
+    actual =ll.kth_from_end(0)
+    assert expected == actual
+
+def test_kth_from_end_2():
+    ll = Linkedlist()
+    ll.append(1)
+    ll.append(3)
+    ll.append(8)
+    ll.append(2)
+    expected = 3
+    actual =ll.kth_from_end(2)
+    assert expected == actual
+
+def test_kth_from_end_6():
+    ll = Linkedlist()
+    ll.append(1)
+    ll.append(3)
+    ll.append(8)
+    ll.append(2)
+    expected = "The Value Nott Found"
+    actual =ll.kth_from_end(6)
+    assert expected == actual
