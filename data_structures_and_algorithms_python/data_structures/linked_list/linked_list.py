@@ -119,16 +119,80 @@ class Linkedlist():
         output += 'NULL'
         return output
 
-my_list = Linkedlist()
+# my_list = Linkedlist()
 
-print(my_list)
-my_list.insert(0)
-my_list.insert(1)
-my_list.insert(2)
-my_list.insert(3)
-my_list.insert(4)
+# print(my_list)
+# my_list.insert(0)
+# my_list.insert(1)
+# my_list.insert(2)
+# my_list.insert(3)
+# my_list.insert(4)
 # print(my_list.insert_before(3,5))
 # print(my_list.__str__())
 # my_list.insert_after(3,5)
-print(my_list.__str__())
-print(my_list.kth_from_end(1))
+# print(my_list.__str__())
+# print(my_list.kth_from_end(1))
+
+def zip_lists(list1,list2):
+        """
+        akes two linked lists as arguments. Zip the two linked lists together into one so that
+        the nodes alternate between the two lists and return a reference to the head of the zipped list. 
+        """
+        try:
+            nodes_counter_li1 = 0
+            nodes_counter_li2 = 0
+            current = list1.head
+            while current != None:
+                current = current.next
+                nodes_counter_li1 = nodes_counter_li1 + 1 
+
+            current = list2.head
+            while current != None:
+                current = current.next
+                nodes_counter_li2 = nodes_counter_li2 + 1 
+
+            if nodes_counter_li1>nodes_counter_li2:
+                curr = list1.head 
+                list2_curr = list2.head 
+                while curr != None and list2_curr != None: 
+                    list1_next = curr.next
+                    list2_next = list2_curr.next
+        
+                    list2_curr.next = list1_next 
+                    curr.next = list2_curr 
+
+                    curr = list1_next 
+                    list2_curr = list2_next 
+
+                list2.head = list2_curr 
+                return list1
+            else:
+                curr = list2.head 
+                list1_curr = list1.head 
+                while curr != None and list1_curr != None: 
+                    list2_next = curr.next
+                    list1_next = list1_curr.next
+        
+                    list1_curr.next = list2_next 
+                    curr.next = list1_curr 
+
+                    curr = list2_next 
+                    list1_curr = list1_next 
+
+                list1.head = list1_curr 
+                return list2
+        except Exception as err:
+            print(f'error line 247 __str__ {err}')
+
+
+if __name__ == "__main__":
+    llist = Linkedlist() 
+    llist1 = Linkedlist() 
+    llist2 = Linkedlist() 
+    llist1.append(3) 
+    llist1.append(2) 
+    llist1.append(1) 
+    llist2.append(8) 
+    llist2.append(7) 
+    llist2.append(6)
+    zip_lists(llist1,llist2)
