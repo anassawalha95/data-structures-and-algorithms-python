@@ -8,15 +8,17 @@ class Linkedlist():
         self.head = None
     
     def insert(self,value):
-        value !=None
-        new_node = Node(value)
-        if not self.head:
-            self.head = new_node
+        if value is None:
+            raise Exception('Please insert vlaue as argument')
         else:
-            curent = self.head
-            while curent.next:
-                curent = curent.next
-            curent.next = new_node
+            new_node = Node(value)
+            if not self.head:
+                self.head = new_node
+            else:
+                curent = self.head
+                while curent.next:
+                    curent = curent.next
+                curent.next = new_node
 
     def append(self,value):
         """
@@ -95,13 +97,16 @@ class Linkedlist():
         print(elms)
 
     def includes(self,num):
-        curent = self.head
-        self.num = num
-        while curent:
-            if curent.value == num:
-                return True
-            curent=curent.next
-        return False
+        if num is None:
+            raise Exception('Please insert vlaue as argument')
+        else:
+            curent = self.head
+            self.num = num
+            while curent:
+                if curent.value == num:
+                    return True
+                curent=curent.next
+            return False
 
     def kth_from_end(self, k):
         """
@@ -158,6 +163,7 @@ list_one.append('m')
 list_one.append('o')
 list_one.append('o')
 list_one.append('m')
+list_one.insert(None)
 print(reverse_ls(list_one))
 # print(check_val())
 # print(my_list)
@@ -165,70 +171,4 @@ print(reverse_ls(list_one))
 # print(my_list.__str__())
 # my_list.insert_after(3,5)
 # print(my_list.__str__())
-# print(my_list.kth_from_end(1))
-
-
-
-# def zip_lists(list1,list2):
-#         """
-#         akes two linked lists as arguments. Zip the two linked lists together into one so that
-#         the nodes alternate between the two lists and return a reference to the head of the zipped list. 
-#         """
-#         try:
-#             nodes_counter_li1 = 0
-#             nodes_counter_li2 = 0
-#             current = list1.head
-#             while current != None:
-#                 current = current.next
-#                 nodes_counter_li1 = nodes_counter_li1 + 1 
-
-#             current = list2.head
-#             while current != None:
-#                 current = current.next
-#                 nodes_counter_li2 = nodes_counter_li2 + 1 
-
-#             if nodes_counter_li1>nodes_counter_li2:
-#                 curr = list1.head 
-#                 list2_curr = list2.head 
-#                 while curr != None and list2_curr != None: 
-#                     list1_next = curr.next
-#                     list2_next = list2_curr.next
-        
-#                     list2_curr.next = list1_next 
-#                     curr.next = list2_curr 
-
-#                     curr = list1_next 
-#                     list2_curr = list2_next 
-
-#                 list2.head = list2_curr 
-#                 return list1
-#             else:
-#                 curr = list2.head 
-#                 list1_curr = list1.head 
-#                 while curr != None and list1_curr != None: 
-#                     list2_next = curr.next
-#                     list1_next = list1_curr.next
-        
-#                     list1_curr.next = list2_next 
-#                     curr.next = list1_curr 
-
-#                     curr = list2_next 
-#                     list1_curr = list1_next 
-
-#                 list1.head = list1_curr 
-#                 return list2
-#         except Exception as err:
-#             print(f'error line 247 __str__ {err}')
-
-
-# if __name__ == "__main__":
-#     llist = Linkedlist() 
-#     llist1 = Linkedlist() 
-#     llist2 = Linkedlist() 
-#     llist1.append(3) 
-#     llist1.append(2) 
-#     llist1.append(1) 
-#     llist2.append(8) 
-#     llist2.append(7) 
-#     llist2.append(6)
-    # zip_lists(llist1,llist2)
+# print(my_list.kth_from_end(1))        
