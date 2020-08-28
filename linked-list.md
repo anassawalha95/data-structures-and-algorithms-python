@@ -41,6 +41,16 @@
 
 ![photo](assets/insert-after.jpg)
 
+### Method To Return Value From The End Of The Linked List
+
+* method for the Linked List class which takes a number, k, as a parameter. 
+Return the node’s value that is k from the end of the linked list
+
+* **Solution**:
+
+![photo](assets/kth-from-end.jpg)
+
+
 ## Note:
 
 * I used pytest and pytest-watch to test my code
