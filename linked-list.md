@@ -12,6 +12,35 @@
 
 * Big O: O(1)
 
+
+### Append Method
+
+* method to add the value to the end of the linkedlist
+
+* **Solution**:
+
+![photo](assets/append1.jpg)
+
+![photo](assets/append2.jpg)
+
+
+### Insert Before Method
+
+* Method to add a new node with the given newValue immediately before the first value node 
+
+* **Solution**:
+
+![photo](assets/insert-before.jpg)
+
+
+### Insert After Method
+
+* Method to add a new node with the given newValue immediately after the first value node
+
+* **Solution**:
+
+![photo](assets/insert-after.jpg)
+
 ## Note:
 
 * I used pytest and pytest-watch to test my code
