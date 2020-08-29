@@ -1,5 +1,5 @@
 # from data_structures_and_algorithms_python.data_structures.linked_list.linked_list import Linkedlist, Node
-
+from data_structures_and_algorithms_python.data_structures.linked_list.linked_list import Linkedlist
 # def zip_lists(list1,list2):
 #         """
 #         akes two linked lists as arguments. Zip the two linked lists together into one so that
@@ -64,3 +64,36 @@
 #     llist2.append(6)
 #     llist.zip_lists(llist1,llist2)
 #     print(llist.__str__())
+
+def zip_lists(ll1,ll2):
+    if not ll1:
+        return ll2
+    if not ll2:
+        return ll1
+
+    output = Linkedlist()
+    current1 = ll1.head
+    current2 = ll2.head
+
+    while current1:
+        output.append(current1.value)
+        if current2:
+            output.append(current2.value)
+            current2 = current2.next
+        current1 = current1.next
+
+    while current2:
+        output.append(current2.value)
+        current2 = current2.next
+
+if __name__ == "__main__":
+    ll1 = Linkedlist()
+    ll1.append(1)
+    ll1.append(3)
+    ll1.append(2)
+    ll2 = Linkedlist()
+    ll2.append(1)
+    ll2.append(3)
+    ll2.append(2)
+    zip_lists(ll1,ll2)
+
