@@ -16,7 +16,7 @@ class AnimalShelter:
     def __init__(self):
         self.front = None
         self.rear = None
-        self.next = None
+        # self.next = None
 
     def enqueue(self, obj):
         
@@ -38,8 +38,10 @@ class AnimalShelter:
         else:
             if pref == 'cat':
                 temp = self.front
-                curr = temp.next
-                # print(curr)
+                self.front = temp.next
+                return temp
+                print("&&&&&&&&&&&&&&&&&&&&&&&")
+            else:
                 while temp:
                     # print('*********** Here **********')
                     if type(temp.value) == type(Cat()):
@@ -50,8 +52,8 @@ class AnimalShelter:
                         break
                     temp = temp.next
                     curr = curr.next
-            else:
-                return None
+            # else:
+            #     return None
 
 
     def __str__(self):
