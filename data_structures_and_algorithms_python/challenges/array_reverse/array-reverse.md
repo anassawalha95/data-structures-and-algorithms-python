@@ -18,6 +18,6 @@
 
 ## Solution
 
-![photo](assets/answer2.jpg)
+![photo](/assets/answer2.jpg)
 
-![photo](assets/answer1.jpg)
+![photo](/assets/answer1.jpg)

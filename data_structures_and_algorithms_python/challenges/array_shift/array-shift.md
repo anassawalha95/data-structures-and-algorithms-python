@@ -16,4 +16,4 @@
 
 ## Solution
 
-![photo](assets/arrayShift.jpg)
+![photo](/assets/arrayShift.jpg)
