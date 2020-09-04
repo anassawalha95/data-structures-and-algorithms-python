@@ -10,4 +10,4 @@ I created a function to handel this problem and it took me three hours to solve 
 
 ### Solution
 
-![phot](assets/multi_bracket_validation.jpg)
+![phot](/assets/multi_bracket_validation.jpg)

@@ -10,4 +10,4 @@
 
 ## Solution
 
-![photo](assets/PseudoQueue.jpg)
+![photo](/assets/PseudoQueue.jpg)

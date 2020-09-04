@@ -13,7 +13,7 @@
 
 ## Solution
 
-![photo](assets/binary-search1.jpg)
+![photo](/assets/binary-search1.jpg)
 
 
-![photo](assets/binary-search2.jpg)
+![photo](/assets/binary-search2.jpg)
