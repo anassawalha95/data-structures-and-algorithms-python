@@ -12,4 +12,4 @@
 
 ## Solution
 
-![photo](/assets/fin-fout.jpg)
+![photo](/assets/f-in-f-out.jpg)
