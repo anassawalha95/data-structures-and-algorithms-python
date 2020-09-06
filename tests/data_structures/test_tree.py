@@ -1,6 +1,6 @@
 import sys
 sys.path.append('/home/aziz/401/data-structures-and-algorithms-python')
-from data_structures_and_algorithms_python.data_structures.tree.tree import BinaryTree, BinarySearchTree
+from data_structures_and_algorithms_python.data_structures.tree.tree import BinaryTree, BinarySearchTree,Node
 
 def test_empty_binary_tree():
     bt = BinaryTree()
@@ -59,4 +59,25 @@ def test_pos_torder_traversal():
     bst.add(105)
     expected = [25, 33, 30, 70, 105, 100, 50]
     actual = bst.post_order()
+    assert expected == actual
+
+def test_find_max_value_empty():
+    bt = BinaryTree()
+    expected = 'Tree is empty'
+    actual = bt.find_maximum_value()
+    assert expected == actual
+
+def test_find_max_value():
+    bt = BinaryTree()
+    bt.root = Node(2)
+    bt.root.right = Node(5)
+    bt.root.left = Node(7)
+    bt.root.right.right = Node(9)
+    bt.root.right.right.left = Node(4)
+    bt.root.left.left = Node(2)
+    bt.root.left.right = Node(6)
+    bt.root.left.right.left = Node(5)
+    bt.root.left.right.right = Node(11)
+    expected = 11
+    actual = bt.find_maximum_value()
     assert expected == actual
