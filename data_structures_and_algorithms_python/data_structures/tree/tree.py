@@ -49,8 +49,28 @@ class BinaryTree:
             output.append(node.value)
         _walk(self.root)
         return output
-    
 
+
+    def find_maximum_value(self):
+        """
+        Method To Find The Maximum Value in The Tree
+        """
+        try:
+            self.root.value
+
+        except AttributeError as e:
+            return 'Tree is empty'
+        else:
+            output = self.in_order()
+            val = -10000
+            for i in range(len(output)):
+                if output[i] > val:
+                    val = output[i]
+            return val
+        
+    
+        
+    
     def __str__(self):
         output = []
         def _walk(node):
@@ -119,3 +139,4 @@ if __name__ == "__main__":
     bst.add(70)
     bst.add(105)
     print(bst.post_order())
+    print(bst.find_maximum_value())

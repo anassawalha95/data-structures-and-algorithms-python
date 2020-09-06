@@ -26,3 +26,19 @@ Create a Binary Tree Class and Binary Search Tree Class
 * *add method* - Accepts a value, and adds a new node with that value in the correct location in the binary search tree.
 
 * *contains method* - Accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once
+
+
+
+# Find Maximum Value in a Tree
+
+### Challenge Description
+
+* Create an instance method for a BinaryTree class called find-maximum-value
+
+### Approach & Efficiency
+
+* I used the in-order method that I created before to retrive all the values in the tree then I did a loop to find the maximum value.
+
+### Solution
+
+![photo](/assets/tree-max-value.jpg)
