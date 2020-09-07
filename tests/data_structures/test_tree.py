@@ -48,7 +48,7 @@ def test_in_order_traversal():
     actual = bst.in_order()
     assert expected == actual
 
-def test_pos_torder_traversal():
+def test_post_order_traversal():
     bst = BinarySearchTree()
     bst.add(50)
     bst.add(100)
@@ -81,3 +81,26 @@ def test_find_max_value():
     expected = 11
     actual = bt.find_maximum_value()
     assert expected == actual
+
+def test_breadth_first_binarytree_empty():
+    bt = BinaryTree()
+    assert BinaryTree.breadth_first_traversal(bt) == None
+
+def test_breadth_first_binarytree_one_element():
+    bt= BinaryTree()
+    bt.root = Node(8)
+    assert BinaryTree.breadth_first_traversal(bt) == [8]
+
+def test_breadth_first_binarytree():
+    bt= BinaryTree()
+    bt.root = Node(2)
+    bt.root.left = Node(7)
+    bt.root.right = Node(5)
+    bt.root.left.left = Node(2)
+    bt.root.left.right = Node(6)
+    bt.root.right.right = Node(9)
+    bt.root.left.right.left = Node(5)
+    bt.root.left.right.right = Node(11)
+    bt.root.right.right.left = Node(4)
+
+    assert BinaryTree.breadth_first_traversal(bt) == [2,7,5,2,6,9,5,11,4]
