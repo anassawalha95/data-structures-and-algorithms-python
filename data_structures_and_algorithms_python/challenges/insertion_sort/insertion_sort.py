@@ -1,8 +1,8 @@
 
 def insertion_sort(lst):
-    """
-    Function receives a list and return it sorted.
-    """
+  """
+  Function receives a list and return it sorted.
+  """
   for i in range(1,len(lst),1):
     j = i-1 
     temp = lst[i]
