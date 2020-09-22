@@ -14,3 +14,4 @@ This repo contain challenges in the folowing topics:
 |multi_bracket_validation | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/tree/master/data_structures_and_algorithms_python/challenges/multi_bracket_validation)|
 |Tree                | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/tree/master/data_structures_and_algorithms_python/data_structures/tree)|
 |insertion-sort      | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/tree/master/data_structures_and_algorithms_python/challenges/insertion_sort)|
+|merge-sort          | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/tree/master/data_structures_and_algorithms_python/challenges/merge_sort)|
