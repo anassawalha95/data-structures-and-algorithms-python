@@ -16,3 +16,4 @@ This repo contain challenges in the folowing topics:
 |insertion-sort      | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/tree/master/data_structures_and_algorithms_python/challenges/insertion_sort)|
 |merge-sort          | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/tree/master/data_structures_and_algorithms_python/challenges/merge_sort)|
 |quick-sort          | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/tree/master/data_structures_and_algorithms_python/challenges/quick_sort)|
+|hash table          | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/tree/master/data_structures_and_algorithms_python/data_structures/hashtable)|
