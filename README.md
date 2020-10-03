@@ -20,3 +20,4 @@ This repo contain challenges in the folowing topics:
 |Repeated-Word       | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/tree/master/data_structures_and_algorithms_python/challenges/repeated_word)|
 |Tree-Intersection   | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/tree/master/data_structures_and_algorithms_python/challenges/tree_intersection)|
 |Left-Join           | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/tree/master/data_structures_and_algorithms_python/challenges/left_join)|
+|Grapg               | [Link](https://github.com/azez-alhoot/data-structures-and-algorithms-python/tree/master/data_structures_and_algorithms_python/data_structures/graph)|
