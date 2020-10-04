@@ -1,7 +1,7 @@
 import sys
 sys.path.append('/home/aziz/401/data-structures-and-algorithms-python')
-# from data_structures_and_algorithms_python.data_structures.graph.queue import Queue
-from queue import Queue
+from data_structures_and_algorithms_python.data_structures.graph.queue import Queue
+# from queue import Queue
 
 class Node:
     def __init__(self, value):
@@ -51,6 +51,33 @@ class Graph:
         Method to Returns the total number of nodes in the graph
         """
         return len(self._adjacency_list)
+
+    def breadth_first(self, start_node):
+        """
+        Method to do breadth-first traversal on a graph.
+        """
+        output = []
+        q = Queue()
+
+        if start_node not in self._adjacency_list:
+            raise ValueError
+
+        q.enqueue(start_node)
+
+        while len(q):
+            cur = q.dequeue()
+            output.append(cur)
+
+            neighbors = self._adjacency_list[cur]
+            for n in neighbors:
+                if not n[0].visited:
+                    n[0].visited = True
+                q.enqueue(n[0])
+
+        for node in self._adjacency_list:
+            node.visited = False
+        
+        return output
 
 
 # if __name__ == "__main__":
