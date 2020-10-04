@@ -36,3 +36,17 @@ Implement the graph, which should be represented as an adjacency list, and shoul
 - get_neighbors(): Returns a collection of nodes connected to the given node with the weights of their connections
 
 - size(): Returns the total number of nodes in the graph
+
+
+# Breadth-first method
+
+### Challenge
+
+Implement a breadth-first traversal on a graph.
+
+### Approach & Efficiency
+
+    breadth_first time Big O(n), space Big O(n)
+
+### Solution
+ ![photo](/assets/breadth-first-graph.jpg)

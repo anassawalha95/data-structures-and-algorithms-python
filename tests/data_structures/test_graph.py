@@ -1,6 +1,6 @@
 import sys
 sys.path.append('/home/aziz/401/data-structures-and-algorithms-python')
-
+import pytest
 from data_structures_and_algorithms_python.data_structures.graph.graph import Graph, Node
 
 def test_add_node():
@@ -61,3 +61,21 @@ def test_size():
 def test_get_nodes_no_nodes():
     g = Graph()
     assert len(g.get_nodes())== 0
+
+
+def test_breadth_first_empty_graph():
+
+    graph = Graph()
+
+    amman = Node("Amman")
+    with pytest.raises(ValueError):
+        lst = graph.breadth_first(amman)
+
+
+def test_breadth_first_one_element():
+
+    graph = Graph()
+
+    amman = graph.add_node('Amman')
+    lst = graph.breadth_first(amman)
+    assert lst == [amman]
