@@ -79,6 +79,31 @@ class Graph:
         
         return output
 
+    def add_nondirectional_edge(self, start_node, end_node, weight=0):
+            self.add_edge(start_node,  end_node, weight)
+            self.add_edge( end_node, start_node, weight)
+
+    def get_edge(self, v_lst):
+        def contains_vertex(value, lst):
+            for vertex in lst:
+                if isinstance(vertex, tuple):
+                    if vertex[0].value == value:
+                        return vertex
+                    continue
+                if vertex.value == value:
+                    return vertex
+            return False, 0
+        current = contains_vertex(v_lst[0], self._adjacency_list.keys())
+        if isinstance(current, Node):
+            tsum = 0
+            for index in range(1, len(v_lst)):
+                current, cost = contains_vertex(v_lst[index], self.get_neighbors(current))
+                tsum += cost
+                if not current:
+                    return (False, '$0')
+            return (True, f'${tsum}')
+        return (False, '$0')
+
 
 # if __name__ == "__main__":
     
