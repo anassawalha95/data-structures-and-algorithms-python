@@ -207,24 +207,59 @@ class BinarySearchTree(BinaryTree):
                     current = current.right
     
 
+# def check_sum_root_to_leaf(node,s):
+#     if node is None:
+#         return (s==0)
+#     else:
+#         ans = 0
+#         subSum = s - node.value
+#         if(subSum == 0 and node.left == None and node.right == None): 
+#             return True  
+
+#         if node.left is not None: 
+#             ans = ans or check_sum_root_to_leaf(node.left, subSum) 
+#         if node.right is not None: 
+#             ans = ans or check_sum_root_to_leaf(node.right, subSum) 
+  
+#         return ans
+
+def check_sum_root_to_leaf(bt,s):
+    if not bt.root:
+        return False
+
+    def _walk(node,s):
+        ans = False
+        subSum = s - node.value
+        
+        if subSum == 0 and node.left == None and node.right == None:
+            return True
+        
+        if node.left:
+            ans = ans or _walk(node.left,subSum)
+        if node.right:
+            ans = ans or _walk(node.right,subSum)
+        return ans
+    return _walk(bt.root,s)
+
 
 if __name__ == "__main__":
 
-    bst = BinarySearchTree()
-    bst.add(50)
-    bst.add(30)
-    bst.add(100)
-    bst.add(25)
-    bst.add(33)
-    bst.add(70)
-    bst.add(105)
+    # bst = BinarySearchTree()
+    # bst.add(50)
+    # bst.add(30)
+    # bst.add(100)
+    # bst.add(25)
+    # bst.add(33)
+    # bst.add(70)
+    # bst.add(105)
     # print(bst.post_order())
-    print(bst.contais(105))
+    # print(bst.contais(105))
 
-    # bt = BinaryTree()
-    # bt.root = Node(1)
-    # bt.root.left = Node(2)
-    # bt.root.right = Node(3)
-    # bt.root.left.left = Node(4)
-    # bt.root.left.right = Node(5)
+    bt = BinaryTree()
+    bt.root = Node(1)
+    bt.root.left = Node(2)
+    bt.root.right = Node(3)
+    bt.root.left.left = Node(4)
+    bt.root.left.right = Node(5)
+    print(check_sum_root_to_leaf(bt,7))
     # print(bt.breadth_first_traversal(bt))
