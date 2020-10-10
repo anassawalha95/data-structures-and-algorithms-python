@@ -159,3 +159,67 @@ def test_false_get_edges():
     actual = g.get_edge(['Naboo, Pandora'])
     expected = (False, '$0')
     assert actual == expected
+
+
+def test_depth_first():
+    graph = Graph()
+
+    a = graph.add_node('a')
+    b = graph.add_node('b')
+    c = graph.add_node('c')
+    d = graph.add_node('d')
+    e = graph.add_node('e')
+    f = graph.add_node('f')
+
+    graph.add_edge(a, b)
+    graph.add_edge(a, c)
+    graph.add_edge(a, d)
+    graph.add_edge(c, e)
+    graph.add_edge(e, f)
+
+    vertices_lst = graph.depth_first(a)
+
+    assert vertices_lst == [a.value, b.value, c.value, e.value, f.value, d.value]
+
+def test_depth_first_xhallenge_example():
+
+    graph = Graph()
+
+    a = graph.add_node('a')
+    b = graph.add_node('b')
+    c = graph.add_node('c')
+    d = graph.add_node('d')
+    e = graph.add_node('e')
+    f = graph.add_node('f')
+    g = graph.add_node('g')
+    h = graph.add_node('h')
+
+    graph.add_edge(a, b)
+    graph.add_edge(b, c)
+    graph.add_edge(b, d)
+    graph.add_edge(c, g)
+    graph.add_edge(a, d)
+    graph.add_edge(d, e)
+    graph.add_edge(d, h)
+    graph.add_edge(d, f)
+
+    graph.add_edge(f, h)
+
+    vertices_lst = graph.depth_first(a)
+
+    assert vertices_lst == [a.value, b.value, c.value, g.value, d.value, e.value, h.value, f.value]
+
+def test_depth_first_given_vertex_not_in_graph():
+
+    graph = Graph()
+
+    a = graph.add_node('a')
+    b = graph.add_node('b')
+    c = graph.add_node('c')
+    d = Node('d')
+
+    graph.add_edge(a, b)
+    graph.add_edge(b, c)
+
+    with pytest.raises(ValueError):
+        vertices_lst = graph.depth_first(d)

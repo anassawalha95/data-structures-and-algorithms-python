@@ -1,11 +1,13 @@
 import sys
 sys.path.append('/home/aziz/401/data-structures-and-algorithms-python')
 from data_structures_and_algorithms_python.data_structures.graph.queue import Queue
-# from queue import Queue
+from data_structures_and_algorithms_python.data_structures.graph.stack import Stack
+
 
 class Node:
     def __init__(self, value):
         self.value = value
+        self.visited = False
 
 class Graph:
     def __init__(self):
@@ -105,18 +107,52 @@ class Graph:
         return (False, '$0')
 
 
-# if __name__ == "__main__":
+
+    def depth_first(self, starting_vertex):
+        """
+        Method to do depth-first traversal on a graph.
+        Input: starting vertex
+        Output: list of vertices in the depth-first order
+        """
+
+        vertices = []
+        depth = Stack()
+
+        if starting_vertex not in self._adjacency_list:
+            raise ValueError
+        
+        depth.push(starting_vertex)
+
+        while not depth.is_empty():
+           top_vertex = depth.pop()
+           vertices.append(top_vertex.value)
+           top_node_neighbors = self.get_neighbors(top_vertex)
+
+           for neighbor in top_node_neighbors[::-1]:
+               if not neighbor[0].visited:
+                   top_vertex.visited = True
+                   neighbor[0].visited = True
+
+                   depth.push(neighbor[0])
+
+        for node in self._adjacency_list:
+            node.visited = False
+
+        return vertices
+        
+if __name__ == "__main__":
     
-#     g = Graph()
+    g = Graph()
 
-#     a = g.add_node('a')
-#     b = g.add_node('b')
-#     c = g.add_node('c')
+    a = g.add_node('a')
+    b = g.add_node('b')
+    c = g.add_node('c')
     
 
-#     g.add_edge(a,b,4)
-#     g.add_edge(b,c,6)
+    g.add_edge(a,b,4)
+    g.add_edge(b,c,6)
 
-#     # print(g.get_nodes())
-#     print(g.get_neighbors(a))
-#     # print(g.size())
+    # print(g.get_nodes())
+    # print(g.get_neighbors(a))
+    # print(g.size())
+    print(g.breadth_first(a))
